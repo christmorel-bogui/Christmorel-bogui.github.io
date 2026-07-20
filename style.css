@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Arial',sans-serif;
+    background-color: #0d1117;
+    color:white;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111111;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00d4ff;
+
+}
+
+.nav-links {
+     display: flex;
+     list-style: none;
+     gap: 30px;
+
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+
+}
+
+.nav-links a:hover {
+    color: cyan;
+
+}
+
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+
+}
+
+#hero span {
+    color: cyan;
+
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: lightgray;
+
+}
+
+.btn {
+    background-color: transparent;
+    color: cyan;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid cyan;
+    color: cyan;
+
+}
+
+section {
+    padding: 100px 50px;
+}
+
+section h2 {
+    font-size: 36px;
+    color: cyan;
+    margin-bottom: 30px;
+
+}
+
+#about {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: lightgray;
+    margin-bottom: 15px;
+}
+
+skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-card {
+    background-color: #16213e;
+    color: cyan;
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid cyan;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.skill-card:hover {
+    background-color: cyan;
+    color: black;
+}
+
+/* PROJETS */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #16213e;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    width: 300px;
+}
+
+.project-card h3 {
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: lightgray;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-card:hover {
+    border-color: cyan;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* CONTACT */
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    color: lightgray;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+#contact a {
+    color: cyan;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: gray;
+    border-top: 1px solid #333;
+    font-size: 14px;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    #hero h1 {
+        font-size: 28px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+    .custom-cursor {
+        display:none !important;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        align-items: center;
+    }
+    .btn {
+        white-space: nowrap;
+    }
+}
+
+/* ANIMATIONS SCROLL */
+.hidden-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.hidden-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CURSEUR PERSONNALISÉ */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid cyan;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    z-index: 9999;
+}
+
+.cursor-grow {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+/* BOUTON RETOUR EN HAUT */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(26, 198, 190);
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* GLOW SUR LES BOUTONS */
+.btn:hover {
+    box-shadow: 0 0 20px cyan;
+}
+
+.skill-card:hover, .project-card:hover {
+    box-shadow: 0 0 15px cyan;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+.light-mode {
+    background-color: #f5f5f5;
+    color: #111111;
+}
+
+.light-mode nav {
+    background-color: #ffffff;
+}
+
+.light-mode .nav-links a {
+    color: rgb(71, 173, 202);
+}
+
+.light-mode .skill-card,
+.light-mode .project-card {
+    background-color: #e8e8e8;
+    color: #111111;
+}
+
+.light-mode #hero p,
+.light-mode #about p,
+.light-mode .project-card p {
+    color: #333333;
+}
+
+.light-mode #hero span,
+.light-mode .logo {
+    color: #0077b6;
+}
+
+.light-mode section h2 {
+    color: #0077b6;
+}
+
+.light-mode .btn {
+    color: #0077b6;
+    border-color: #0077b6;
+}
+
+.light-mode .skill-card {
+    border-color: #0077b6;
+    color: #0077b6;
+}
+
+.light-mode .project-card h3 {
+    color: #0077b6;
+}
+
+.light-mode #contact a {
+    color: #0077b6;
+}
+
+.burger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: cyan;
+    z-index: 1001;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #111111;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.nav-links.active ~ .back-to-top {
+    display: none;
+}
